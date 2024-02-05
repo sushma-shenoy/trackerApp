@@ -11,9 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
+          "defaultConfiguration": "production",
+
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Angular-Project",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,6 +31,14 @@
             "scripts": []
           },
           "configurations": {
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -64,6 +74,9 @@
             "browserTarget": "Angular-Project:build"
           },
           "configurations": {
+            "development": {
+              "browserTarget": "Angular-Project:build:development"
+             },
             "production": {
               "browserTarget": "Angular-Project:build:production"
             }
@@ -116,6 +129,9 @@
               "devServerTarget": "Angular-Project:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }},
