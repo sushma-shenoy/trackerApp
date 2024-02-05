@@ -8,7 +8,7 @@ import { UiService } from 'src/app/ui.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title = 'Angular-Project';
+  title = 'Tracker';
   showAddTask: boolean = false;
   constructor(private uiService: UiService,public router:Router) {
     this.router.url =='/'
